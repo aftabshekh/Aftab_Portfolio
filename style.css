@@ -1,0 +1,260 @@
+:root {
+    --primary: #0d3567;
+    /* Navy blue for navbar/footer */
+    --secondary: #36519b;
+    /* Slightly lighter navy for sections */
+    --accent: #fffc5c;
+    /* Neon cyan accent */
+    --accent2: #e6e258;
+    /* Neon yellow accent (optional) */
+    --bg: #e2ea4f;
+    /* Navy blue background */
+    --card: #022770;
+    /* Card backgrounds */
+    --text: hsl(68, 88%, 66%);
+    /* Light text */
+    --muted: #4040f2;
+    /* Muted text */
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+section {
+    padding: 60px 0;
+}
+
+#about,
+#education,
+#skills-projects,
+#contact {
+    background: var(--secondary);
+}
+
+.skills-projects-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.skills-card,
+.projects-card,
+.about-card,
+.edu-card,
+.contact-card {
+    background: var(--card);
+    border: 1.5px solid var(--accent);
+    color: var(--text);
+    border-radius: 14px;
+    box-shadow: 0 2px 16px var(--accent);
+    padding: 28px;
+    margin-bottom: 32px;
+}
+
+.skills-card {
+    flex: 1 1 300px;
+    min-width: 260px;
+}
+
+.projects-card {
+    flex: 2 1 500px;
+    min-width: 320px;
+}
+
+@media (max-width: 900px) {
+    .skills-projects-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .skills-card,
+    .projects-card {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+.navbar {
+    background: var(--primary);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    height: 60px;
+}
+
+.navbar .logo {
+    color: var(--accent);
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-shadow: 0 0 8px var(--accent);
+    transition: text-shadow 0.3s, color 0.3s;
+}
+
+.navbar .logo:hover,
+.navbar .logo:focus {
+    color: var(--accent2);
+    text-shadow:
+        0 0 12px var(--accent2),
+        0 0 24px var(--accent),
+        0 0 32px var(--accent2),
+        0 0 48px var(--accent);
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a:focus,
+#nav-links a.active {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+section h2 {
+    color: var(--accent);
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px var(--accent2);
+}
+
+.profile-pic-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    box-shadow: 0 2px 16px var(--accent);
+    background: var(--secondary);
+}
+
+.projects-card ul li {
+    transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+    background: var(--card);
+    border-left: 4px solid var(--accent);
+    margin-bottom: 18px;
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 0 12px var(--accent);
+}
+
+.projects-card ul li:hover {
+    box-shadow: 0 4px 16px var(--accent2);
+    transform: translateY(-4px) scale(1.03);
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.projects-card ul li strong {
+    color: var(--accent2);
+    text-shadow: 0 0 6px var(--accent2);
+}
+
+.contact-card a {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent);
+}
+
+.contact-card a:hover {
+    color: var(--accent2);
+    text-shadow: 0 0 16px var(--accent2);
+}
+
+button[type="submit"] {
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    color: #232323;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 28px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px var(--accent);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    color: var(--primary);
+    box-shadow: 0 4px 16px var(--accent2);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--primary);
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px var(--accent);
+}
+
+#scrollTopBtn {
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    color: var(--accent2);
+    box-shadow: 0 2px 8px var(--accent2);
+}
+
+#scrollTopBtn:hover {
+    background: linear-gradient(135deg, var(--accent2), var(--accent));
+    color: var(--primary);
+}
+
+.glow-name {
+    color: var(--accent2);
+    font-weight: bold;
+    transition:
+        text-shadow 0.3s,
+        color 0.3s,
+        font-size 0.3s,
+        transform 0.3s;
+    cursor: pointer;
+}
+
+.glow-name:hover,
+.glow-name:focus {
+    color: var(--accent);
+    text-shadow:
+        0 0 12px var(--accent2),
+        0 0 24px var(--accent),
+        0 0 32px var(--accent2),
+        0 0 48px var(--accent);
+    font-size: 1.35em;
+    transform: scale(1.12);
+}
